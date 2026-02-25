@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:berghain.ntag.fr)",
+      "WebFetch(domain:www.createwithswift.com)",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:apnspush.com)"
+    ]
+  }
+}

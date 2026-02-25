@@ -6,14 +6,75 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6CDF69232F4EF952003C1B2E /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CDF69222F4EF952003C1B2E /* WidgetKit.framework */; };
+		6CDF69252F4EF952003C1B2E /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CDF69242F4EF952003C1B2E /* SwiftUI.framework */; };
+		6CDF69342F4EF954003C1B2E /* HowLongWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6CDF69202F4EF952003C1B2E /* HowLongWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6CDF69322F4EF954003C1B2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CDF69002F4E5776003C1B2E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CDF691F2F4EF952003C1B2E;
+			remoteInfo = HowLongWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6CDF69392F4EF954003C1B2E /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6CDF69342F4EF954003C1B2E /* HowLongWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6CDF69082F4E5776003C1B2E /* How long.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How long.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CDF69202F4EF952003C1B2E /* HowLongWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = HowLongWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CDF69222F4EF952003C1B2E /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		6CDF69242F4EF952003C1B2E /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		6CDF69352F4EF954003C1B2E /* Exceptions for "HowLongWidget" folder in "HowLongWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 6CDF691F2F4EF952003C1B2E /* HowLongWidgetExtension */;
+		};
+		6CDF693D2F4EF98E003C1B2E /* Exceptions for "How long" folder in "HowLongWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				BerghainActivityAttributes.swift,
+			);
+			target = 6CDF691F2F4EF952003C1B2E /* HowLongWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6CDF690A2F4E5776003C1B2E /* How long */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6CDF693D2F4EF98E003C1B2E /* Exceptions for "How long" folder in "HowLongWidgetExtension" target */,
+			);
 			path = "How long";
+			sourceTree = "<group>";
+		};
+		6CDF69262F4EF952003C1B2E /* HowLongWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				6CDF69352F4EF954003C1B2E /* Exceptions for "HowLongWidget" folder in "HowLongWidgetExtension" target */,
+			);
+			path = HowLongWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,6 +87,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6CDF691D2F4EF952003C1B2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CDF69252F4EF952003C1B2E /* SwiftUI.framework in Frameworks */,
+				6CDF69232F4EF952003C1B2E /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				6CDF690A2F4E5776003C1B2E /* How long */,
+				6CDF69262F4EF952003C1B2E /* HowLongWidget */,
+				6CDF69212F4EF952003C1B2E /* Frameworks */,
 				6CDF69092F4E5776003C1B2E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +113,18 @@
 			isa = PBXGroup;
 			children = (
 				6CDF69082F4E5776003C1B2E /* How long.app */,
+				6CDF69202F4EF952003C1B2E /* HowLongWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6CDF69212F4EF952003C1B2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6CDF69222F4EF952003C1B2E /* WidgetKit.framework */,
+				6CDF69242F4EF952003C1B2E /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +137,12 @@
 				6CDF69042F4E5776003C1B2E /* Sources */,
 				6CDF69052F4E5776003C1B2E /* Frameworks */,
 				6CDF69062F4E5776003C1B2E /* Resources */,
+				6CDF69392F4EF954003C1B2E /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6CDF69332F4EF954003C1B2E /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				6CDF690A2F4E5776003C1B2E /* How long */,
@@ -69,6 +153,28 @@
 			productName = "How long";
 			productReference = 6CDF69082F4E5776003C1B2E /* How long.app */;
 			productType = "com.apple.product-type.application";
+		};
+		6CDF691F2F4EF952003C1B2E /* HowLongWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CDF69362F4EF954003C1B2E /* Build configuration list for PBXNativeTarget "HowLongWidgetExtension" */;
+			buildPhases = (
+				6CDF691C2F4EF952003C1B2E /* Sources */,
+				6CDF691D2F4EF952003C1B2E /* Frameworks */,
+				6CDF691E2F4EF952003C1B2E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6CDF69262F4EF952003C1B2E /* HowLongWidget */,
+			);
+			name = HowLongWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = HowLongWidgetExtension;
+			productReference = 6CDF69202F4EF952003C1B2E /* HowLongWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +187,9 @@
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					6CDF69072F4E5776003C1B2E = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					6CDF691F2F4EF952003C1B2E = {
 						CreatedOnToolsVersion = 26.2;
 					};
 				};
@@ -100,12 +209,20 @@
 			projectRoot = "";
 			targets = (
 				6CDF69072F4E5776003C1B2E /* How long */,
+				6CDF691F2F4EF952003C1B2E /* HowLongWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6CDF69062F4E5776003C1B2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CDF691E2F4EF952003C1B2E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +239,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6CDF691C2F4EF952003C1B2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6CDF69332F4EF954003C1B2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CDF691F2F4EF952003C1B2E /* HowLongWidgetExtension */;
+			targetProxy = 6CDF69322F4EF954003C1B2E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6CDF69112F4E577B003C1B2E /* Debug */ = {
@@ -251,11 +383,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "How long/How long.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AMUHMJ9M8F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "How long?";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -283,11 +418,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "How long/How long.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = AMUHMJ9M8F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "How long?";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -303,6 +441,66 @@
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6CDF69372F4EF954003C1B2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = AMUHMJ9M8F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HowLongWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HowLongWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.ntag.How-long.HowLongWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6CDF69382F4EF954003C1B2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = AMUHMJ9M8F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HowLongWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = HowLongWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.ntag.How-long.HowLongWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -327,6 +525,15 @@
 			buildConfigurations = (
 				6CDF69142F4E577B003C1B2E /* Debug */,
 				6CDF69152F4E577B003C1B2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CDF69362F4EF954003C1B2E /* Build configuration list for PBXNativeTarget "HowLongWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CDF69372F4EF954003C1B2E /* Debug */,
+				6CDF69382F4EF954003C1B2E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
