@@ -75,7 +75,7 @@ private struct LockScreenView: View {
 
                 Spacer()
 
-                if let latestDate {
+                if let latestDate = state.latestDate {
                     (Text(latestDate, style: .relative)
                         .font(.system(size: 10))
                         .foregroundStyle(.gray)
@@ -88,23 +88,11 @@ private struct LockScreenView: View {
 
             // Queue cards
             HStack(spacing: 8) {
+                QueueCard(label: "Normal", info: state.regularInfo)
+                QueueCard(label: "Re-entry", info: state.reentryInfo)
                 QueueCard(
-                    icon: "lock.fill",
-                    label: "Normal",
-                    info: state.regularInfo,
-                    date: state.regularDate
-                )
-                QueueCard(
-                    icon: "rectangle.on.rectangle",
-                    label: "Re-entry",
-                    info: state.reentryInfo,
-                    date: state.reentryDate
-                )
-                QueueCard(
-                    icon: "person.2.fill",
                     label: "Guest List",
                     info: state.glInfo,
-                    date: state.glDate,
                     isHighlighted: state.glInfo?.lowercased().contains("no queue") == true
                 )
             }
@@ -139,28 +127,17 @@ private struct LockScreenView: View {
         .padding(12)
     }
 
-    private var latestDate: Date? {
-        [state.regularDate, state.glDate, state.reentryDate]
-            .compactMap { $0 }
-            .max()
-    }
 }
 
 // MARK: - Queue Card (Lock Screen)
 
 private struct QueueCard: View {
-    let icon: String
     let label: String
     let info: String?
-    let date: Date?
     var isHighlighted: Bool = false
 
     var body: some View {
         VStack(spacing: 4) {
-            Image(systemName: icon)
-                .font(.system(size: 16))
-                .foregroundStyle(isHighlighted ? .green : .white.opacity(0.8))
-
             Text(label)
                 .font(.system(size: 10))
                 .foregroundStyle(.gray)
@@ -169,6 +146,9 @@ private struct QueueCard: View {
                 Text(info)
                     .font(.system(size: 14, weight: .bold))
                     .foregroundStyle(isHighlighted ? .green : .white)
+                    .minimumScaleFactor(0.7)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.center)
             } else {
                 Text("No info")
                     .font(.system(size: 14, weight: .bold))
@@ -205,20 +185,20 @@ private struct QueuePill: View {
 } contentStates: {
     BerghainActivityAttributes.ContentState(
         regularInfo: "1h Wait",
-        regularDate: .now.addingTimeInterval(-120),
+        regularDate: 1773756000.0,
         glInfo: "No Queue",
-        glDate: .now.addingTimeInterval(-120),
+        glDate: 1773756000.0,
         reentryInfo: "2h Wait",
-        reentryDate: .now.addingTimeInterval(-120),
+        reentryDate: 1773756000.0,
         bouncers: ["Matrix", "Andy", "Yoan"]
     )
     BerghainActivityAttributes.ContentState(
         regularInfo: "40 min",
-        regularDate: .now.addingTimeInterval(-300),
+        regularDate: 1773755700.0,
         glInfo: nil,
         glDate: nil,
         reentryInfo: "10 people",
-        reentryDate: .now.addingTimeInterval(-300),
+        reentryDate: 1773755700.0,
         bouncers: ["Matrix", "Sven"]
     )
 }

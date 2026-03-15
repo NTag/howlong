@@ -25,11 +25,11 @@ final class LiveActivityManager {
             let queues = try await APIService.fetchQueues()
             initialState = BerghainActivityAttributes.ContentState(
                 regularInfo: queues.regular?.info,
-                regularDate: queues.regular?.date,
+                regularDate: queues.regular?.date.map { $0.timeIntervalSince1970 },
                 glInfo: queues.gl?.info,
-                glDate: queues.gl?.date,
+                glDate: queues.gl?.date.map { $0.timeIntervalSince1970 },
                 reentryInfo: queues.reentry?.info,
-                reentryDate: queues.reentry?.date,
+                reentryDate: queues.reentry?.date.map { $0.timeIntervalSince1970 },
                 bouncers: queues.bouncers
             )
         } catch {

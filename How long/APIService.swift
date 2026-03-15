@@ -1,8 +1,27 @@
 import Foundation
 
 struct QueueInfo: Codable {
-    let info: String
-    let date: Date
+    let info: String?
+    let date: Date?
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        info = try container.decodeIfPresent(String.self, forKey: .info)
+
+        // Handle empty string dates from the API
+        if let dateString = try container.decodeIfPresent(String.self, forKey: .date),
+           !dateString.isEmpty {
+            let formatter = ISO8601DateFormatter()
+            formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+            date = formatter.date(from: dateString)
+        } else {
+            date = nil
+        }
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case info, date
+    }
 }
 
 struct QueuesResponse: Codable {
@@ -15,16 +34,10 @@ struct QueuesResponse: Codable {
 enum APIService {
     private static let baseURL = "https://berghain.ntag.fr"
 
-    private static var decoder: JSONDecoder {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        return decoder
-    }
-
     static func fetchQueues() async throws -> QueuesResponse {
         let url = URL(string: "\(baseURL)/queues")!
         let (data, _) = try await URLSession.shared.data(from: url)
-        return try decoder.decode(QueuesResponse.self, from: data)
+        return try JSONDecoder().decode(QueuesResponse.self, from: data)
     }
 
     static func registerToken(_ token: String) async throws {
